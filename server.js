@@ -21,14 +21,12 @@ const PORT = process.env.PORT || 3003;
 // API key environment
 const api_key = process.env.API_KEY;
 
-
-
 //___________________
 // Front end CORS
 const whitelist = ['http://localhost:3000'] // TODO: add deployment link to whitelist later
 const corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (whitelist.indexOf(origin) >= 0) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
@@ -73,6 +71,7 @@ app.use('/api/contacts', routerController)
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
+
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
