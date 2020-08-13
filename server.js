@@ -8,6 +8,7 @@ const app = express();
 const sqlite3 = require('sqlite3').verbose();
 const sequelize = require('sequelize')
 const routerController = require('./controllers/router.js')
+const projectRouterController = require('./controllers/project.js')
 const cors = require('cors')
 
 
@@ -68,6 +69,7 @@ app.use(express.static('public'));
 
 // use router controller
 app.use('/api/contacts', routerController)
+app.use('/api/projects', projectRouterController)
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project

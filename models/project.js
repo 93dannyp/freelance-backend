@@ -5,7 +5,7 @@ const {
 
 const sequelize = require('../databases/databaseConnector.js')
 
-  class Contact extends Model {
+  class Project extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,22 +13,25 @@ const sequelize = require('../databases/databaseConnector.js')
      */
     static associate(models) {
       // define association here
-      Contact.associate = (models) => {
-        Company.hasMany(models.Project, {as: 'Projects'})
-      }
     }
   };
-  Contact.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    phoneNumber: DataTypes.STRING,
-    email: DataTypes.STRING,
-    img: DataTypes.STRING,
-    
+  Project.init({
+    projectTitle: DataTypes.STRING,
+    projectDescription: DataTypes.STRING,
+    projectDueDate: DataTypes.STRING,
+    contactId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Contact',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
-    modelName: 'Contact',
-  });
+    modelName: 'Project',
+  })
+  
+  Project.sync()
   
 
-module.exports = Contact
+module.exports = Project
