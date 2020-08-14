@@ -2,6 +2,15 @@ const express = require('express')
 const project = express.Router()
 const Project = require('../models/project.js')
 
+project.get('/', (req, res) => {
+    return Project.findAll().then((projects) => 
+        res.send(projects))
+    .catch((err) => {
+        console.log('There was an error querying contacts', JSON.stringify(err))
+        return res.send(err)
+    })
+})
+
 project.post('/', (req, res) => {
     return Project.create(req.body).then((newProject) => {
         res.send(newProject.dataValues)

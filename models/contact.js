@@ -14,7 +14,7 @@ const sequelize = require('../databases/databaseConnector.js')
     static associate(models) {
       // define association here
       Contact.associate = (models) => {
-        Company.hasMany(models.Project, {as: 'Projects'})
+        Contact.hasMany(models.Project, {as: 'Projects'})
       }
     }
   };
@@ -30,5 +30,6 @@ const sequelize = require('../databases/databaseConnector.js')
     modelName: 'Contact',
   });
   
+  Contact.sync()
 
 module.exports = Contact

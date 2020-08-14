@@ -90,6 +90,7 @@ router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id)
     return Contact.findByPk(id)
     .then((contact) => {
+        console.log(contact)
         contact.destroy()
     })
     .then(() => res.send({id}))

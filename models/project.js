@@ -13,6 +13,9 @@ const sequelize = require('../databases/databaseConnector.js')
      */
     static associate(models) {
       // define association here
+      Project.associate = (models) => {
+        Project.hasOne(models.Contact, {as: 'Contacts'})
+      }
     }
   };
   Project.init({
@@ -22,7 +25,7 @@ const sequelize = require('../databases/databaseConnector.js')
     contactId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Contact',
+        model: 'Contacts',
         key: 'id'
       }
     }
@@ -32,6 +35,5 @@ const sequelize = require('../databases/databaseConnector.js')
   })
   
   Project.sync()
-  
 
 module.exports = Project
