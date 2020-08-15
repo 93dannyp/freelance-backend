@@ -3,8 +3,8 @@ const { Sequelize } = require('sequelize')
 const sequelize = new Sequelize({
     dialect: 'sqlite',
     storage: 'database.sqlite3'
-  })
-
+  }) 
+  // || new Sequelize(process.env.DATABASE_URL)
 
 sequelize.authenticate().then(() => {
   console.log('Connection established successfully.');
@@ -17,5 +17,4 @@ sequelize.authenticate().then(() => {
 //   sequelize.close();
 // });
 
-
-  module.exports = sequelize
+module.exports = sequelize

@@ -41,6 +41,9 @@ app.use(cors(corsOptions))
 
 //___________________
 //Database
+// sequelize.connect(DATABASE_URL, {
+//   useNewUrlParser: true,
+// })
 
 // Open database error / success
 const db = new sqlite3.Database('database.sqlite3', (err) => {
@@ -55,12 +58,19 @@ db.close((err) => {
   if (err) {
     return console.error(err.message);
   }
-  console.log('Close the database connection.');
+  console.log('Closed the database connection.');
 });
 
 //___________________
 //Middleware
 //___________________
+// app.use(
+//   session({
+//     secret: process.env.SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
 // body parser
 app.use(bodyParser.json())
 
