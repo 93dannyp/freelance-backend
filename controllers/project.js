@@ -20,4 +20,20 @@ project.post('/', (req, res) => {
     })
 })
 
+
+// TODO fix bug on route that updats on refresh. Should update automatically 
+project.delete('/:id', (req, res) => {
+    const id = parseInt(req.params.id)
+    return Project.findByPk(id)
+    .then((project) => {
+        console.log(project)
+        project.destroy()
+    })
+    .then(() => res.send({id}))
+    .catch((err) => {
+        console.log('There was an error deleting the project', JSON.stringify(err))
+        res.status(400).send(err)
+    })
+})
+
 module.exports = project
