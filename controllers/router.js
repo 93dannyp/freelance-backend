@@ -16,8 +16,11 @@ const bodyParser = require('body-parser')
 
 router.get('/', (req, res) => {
     console.log('hit the route')
+   
     return Contact.findAll().then((contacts) => 
-        res.send(contacts))
+        {console.log(contacts)
+        res.send(contacts)})
+        
     .catch((err) => {
         console.log('There was an error querying contacts', JSON.stringify(err))
         return res.send(err)
