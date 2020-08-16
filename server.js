@@ -36,8 +36,8 @@ const corsOptions = {
 }
 
 // use CORS
-app.use(cors(corsOptions))
-
+// app.use(cors(corsOptions))
+app.use(cors())
 
 //___________________
 //Database
@@ -89,7 +89,7 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 app.get('/',(req, res) => {
-  res.send('hello')
+  res.send('hello world')
 })
 
 //___________________
