@@ -88,9 +88,9 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-// app.get('/',(req, res) => {
-//   res.send('hello world')
-// })
+app.get('/',(req, res) => {
+  res.send('hello world')
+})
 
 //___________________
 //Listener
