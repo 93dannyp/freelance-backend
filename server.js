@@ -24,7 +24,7 @@ const api_key = process.env.API_KEY;
 
 //___________________
 // Front end CORS
-const whitelist = ['http://localhost:3000', 'https://freelancecrm.herokuapp.com/'] // TODO: add deployment link to whitelist later
+const whitelist = ['http://localhost:3000', 'https://freelancecrm.herokuapp.com/api'] // TODO: add deployment link to whitelist later
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) >= 0) {
@@ -36,8 +36,8 @@ const corsOptions = {
 }
 
 // use CORS
-// app.use(cors(corsOptions))
-app.use(cors())
+app.use(cors(corsOptions))
+// app.use(cors())
 
 //___________________
 //Database
