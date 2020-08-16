@@ -24,7 +24,6 @@ const sequelize = require('../databases/databaseConnector.js')
     phoneNumber: DataTypes.STRING,
     email: DataTypes.STRING,
     img: DataTypes.STRING,
-    
   }, {
     sequelize,
     modelName: 'Contact',
@@ -33,3 +32,6 @@ const sequelize = require('../databases/databaseConnector.js')
   Contact.sync()
 
 module.exports = Contact
+
+  // lead: DataTypes.BOOLEAN,
+    // notes: DataTypes.STRING
