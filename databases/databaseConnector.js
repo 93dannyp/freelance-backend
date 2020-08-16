@@ -8,8 +8,9 @@ const { Sequelize } = require('sequelize')
 //     storage: 'database.sqlite3'
 //   }) 
 // }
+// new Sequelize(process.env.DATABASE_URL) ||
 
-const sequelize =  new Sequelize(process.env.DATABASE_URL) || new Sequelize({
+const sequelize = new Sequelize({
       dialect: 'sqlite',
       storage: 'database.sqlite3'
 }) 
