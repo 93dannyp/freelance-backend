@@ -24,7 +24,7 @@ const api_key = process.env.API_KEY;
 
 //___________________
 // Front end CORS
-const whitelist = ['http://localhost:3000', 'https://freelancecrm.herokuapp.com/api'] // TODO: add deployment link to whitelist later
+const whitelist = ['http://localhost:3000', 'https://freelancecrm.herokuapp.com/'] // TODO: add deployment link to whitelist later
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) >= 0) {
@@ -88,9 +88,9 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-app.get('/',(req, res) => {
-  res.send('hello world')
-})
+// app.get('/',(req, res) => {
+//   res.send('hello world')
+// })
 
 //___________________
 //Listener

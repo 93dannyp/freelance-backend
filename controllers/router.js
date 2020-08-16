@@ -15,6 +15,7 @@ const bodyParser = require('body-parser')
 //___________________
 
 router.get('/', (req, res) => {
+    console.log('hit the route')
     return Contact.findAll().then((contacts) => 
         res.send(contacts))
     .catch((err) => {
