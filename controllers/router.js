@@ -92,7 +92,7 @@ router.put('/:id', (req, res) => {
     })
 })
 
-// TODO fix bug on route that updats on refresh. Should update automatically 
+
 router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id)
     return Contact.findByPk(id)
