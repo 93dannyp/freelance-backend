@@ -21,9 +21,12 @@ const sequelize = require('../databases/databaseConnector.js')
   Contact.init({
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
+    company: DataTypes.STRING,
     phoneNumber: DataTypes.STRING,
     email: DataTypes.STRING,
     img: DataTypes.STRING,
+    lead: DataTypes.BOOLEAN,
+    notes: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Contact',
