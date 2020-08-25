@@ -3,7 +3,7 @@
 // Requirements
 //___________________
 const express = require('express')
-const router = express.Router()
+const contact = express.Router()
 const Contact = require('../models/contact.js')
 const bodyParser = require('body-parser')
 
@@ -16,7 +16,7 @@ const bodyParser = require('body-parser')
 
 
 
-router.get('/', (req, res) => {
+contact.get('/', (req, res) => {
     console.log('hit the route')
    
     return Contact.findAll().then((contacts) => 
@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 })
 
 
-router.post('/', (req, res) => {
+contact.post('/', (req, res) => {
     return Contact.create(req.body).then((contact) => {
         res.send(contact.dataValues)
     }).catch((err) => {
@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
     })
 })
 
-// router.get('/:id/edit', (req, res) => {
+// contact.get('/:id/edit', (req, res) => {
 //     const id = parseInt(req.params.id)
 //     console.log(id)
 //     return Contact.findByPk(id)
@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
 //     })
 // })
 
-router.put('/:id', (req, res) => {
+contact.put('/:id', (req, res) => {
     console.log('req.params is', req.params)
     const id = parseInt(req.params.id)
     console.log('req.body is',req.body)
@@ -93,7 +93,7 @@ router.put('/:id', (req, res) => {
 })
 
 
-router.delete('/:id', (req, res) => {
+contact.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id)
     return Contact.findByPk(id)
     .then((contact) => {
@@ -107,4 +107,4 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-module.exports = router
+module.exports = contact

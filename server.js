@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const sqlite3 = require('sqlite3').verbose();
 const sequelize = require('sequelize')
-const routerController = require('./controllers/router.js')
+const routerController = require('./controllers/contact.js')
 const projectRouterController = require('./controllers/project.js')
 const cors = require('cors')
 
