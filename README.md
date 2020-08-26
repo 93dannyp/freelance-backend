@@ -1,11 +1,41 @@
 # freelance
 
 ```
-backend
-|
-+--_
-|
+Front End
 
+freelance-frontend
+└── src
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    └── components
+        ├── BusinessLeadsList.jsx
+        ├── ContactList.jsx
+        ├── Header.jsx
+        ├── ProjectList.jsx
+        ├── Sidebar.jsx
+        ├── TweetList.jsx
+        └── modals
+            ├── EditForm.jsx
+            ├── NewContact.jsx
+            ├── NewProject.jsx
+            └── ProjectEditForm.jsx
+```
+
+``` 
+Back end
+
+  freelance-backend
+  ├── controllers
+  │   ├── contact.js
+  │   └── project.js
+  ├── databases
+  │   └── databaseConnector.js
+  ├── database.sqlite3
+  ├── models
+  │   ├── contact.js
+  │   └── project.js
+  └── server.js
 ```
 
 
