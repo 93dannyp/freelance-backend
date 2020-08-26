@@ -23,7 +23,7 @@ Front End
 ```
 
 ``` 
-Back end
+Back End
 
   freelance-backend
   ├── controllers
