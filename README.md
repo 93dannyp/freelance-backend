@@ -1,5 +1,44 @@
 # freelance
 
+```
+Front End
+
+    freelance-frontend
+    └── src
+        ├── App.css
+        ├── App.js
+        ├── App.test.js
+        └── components
+            ├── BusinessLeadsList.jsx
+            ├── ContactList.jsx
+            ├── Header.jsx
+            ├── ProjectList.jsx
+            ├── Sidebar.jsx
+            ├── TweetList.jsx
+            └── modals
+                ├── EditForm.jsx
+                ├── NewContact.jsx
+                ├── NewProject.jsx
+                └── ProjectEditForm.jsx
+```
+
+``` 
+Back End
+
+  freelance-backend
+  ├── controllers
+  │   ├── contact.js
+  │   └── project.js
+  ├── databases
+  │   └── databaseConnector.js
+  ├── database.sqlite3
+  ├── models
+  │   ├── contact.js
+  │   └── project.js
+  └── server.js
+```
+
+
 ## User Stories
 ### Dave, a Freelance Programmer and recent GA grad.
 As Dave, I want to organize my projects to keep them on schedule so that I can deliver it to my client on time.
