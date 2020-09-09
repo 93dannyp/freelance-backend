@@ -24,6 +24,7 @@ Users can add their twitter feed to their dashboard to keep up with social media
 ### Stack
 React Js, Node.js, Sequelize
 
+### File Structure
 ```
 Front End
 
