@@ -1,4 +1,5 @@
 # Freelance CRM
+https://freelancecrm.herokuapp.com/
 
 Freelance CRM is a minimalist CRM built with Freelancers in mind. The idea behind this project is that freelancers have relatively simple needs when it comes to using a CRM so this one has a nice UI and simplistic functionality.
 
