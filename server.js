@@ -11,7 +11,6 @@ const routerController = require('./controllers/contact.js')
 const projectRouterController = require('./controllers/project.js')
 const cors = require('cors')
 
-
 //___________________
 //Port
 //___________________
@@ -64,14 +63,6 @@ db.close((err) => {
 //___________________
 //Middleware
 //___________________
-// app.use(
-//   session({
-//     secret: process.env.SECRET,
-//     resave: false,
-//     saveUninitialized: false,
-//   })
-// );
-// body parser
 app.use(bodyParser.json())
 
 //use public folder for static assets

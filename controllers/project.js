@@ -23,9 +23,8 @@ project.post('/', (req, res) => {
 project.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id)
     return Project.findByPk(id)
-    .then((project) => {
-        console.log(project)
-        project.destroy()
+    .then((foundProject) => {
+        foundProject.destroy()
     })
     .then(() => res.send({id}))
     .catch((err) => {

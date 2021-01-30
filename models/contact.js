@@ -1,8 +1,5 @@
 'use strict';
-const {
-  Model, DataTypes
-} = require('sequelize');
-
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../databases/databaseConnector.js')
 
   class Contact extends Model {
@@ -35,6 +32,3 @@ const sequelize = require('../databases/databaseConnector.js')
   Contact.sync()
 
 module.exports = Contact
-
-  // lead: DataTypes.BOOLEAN,
-    // notes: DataTypes.STRING
