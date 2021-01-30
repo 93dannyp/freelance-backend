@@ -1,5 +1,31 @@
-# freelance
+# Freelance CRM
+https://freelancecrm.herokuapp.com/
 
+Freelance CRM is a minimalist CRM built with Freelancers in mind. The idea behind this project is that freelancers have relatively simple needs when it comes to using a CRM so this one has a nice UI and simplistic functionality.
+
+### Functionality includes:
+#### Contact Information: 
+Uses can create contacts with a picture, first and last name, phone number, email address, business, and whether or not they are a business lead.
+
+#### Image Upload: 
+Users have file browse, drag and drop, and hot-link capabilities for contact image uploading.
+
+#### Contact Management: 
+Users can Add, Edit, and Delete a contact.
+
+#### Business Leads:
+Users can check a box on their data input form and their contact will show up as a business lead.
+
+#### Projects: 
+Users can create a project for a certain contact that is linked to that contact. Project information includes the contact relevant to the project, project title, project description, and due date.
+
+#### Twitter Timeline: 
+Users can add their twitter feed to their dashboard to keep up with social media interaction.
+
+### Stack
+React Js, Node.js, Sequelize
+
+### File Structure
 ```
 Front End
 
