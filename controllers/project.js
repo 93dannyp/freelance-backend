@@ -20,8 +20,6 @@ project.post('/', (req, res) => {
     })
 })
 
-
-// TODO fix bug on route that updats on refresh. Should update automatically 
 project.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id)
     return Project.findByPk(id)

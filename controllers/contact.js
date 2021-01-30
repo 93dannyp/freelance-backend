@@ -13,9 +13,6 @@ const bodyParser = require('body-parser')
 //___________________
 // Routes
 //___________________
-
-
-
 contact.get('/', (req, res) => {
     console.log('hit the route')
    
@@ -39,33 +36,12 @@ contact.post('/', (req, res) => {
     })
 })
 
-// contact.get('/:id/edit', (req, res) => {
-//     const id = parseInt(req.params.id)
-//     console.log(id)
-//     return Contact.findByPk(id)
-//     .then((data) => {
-//         console.log(data.dataValues)
-//         res.send(data.dataValues)
-//         // res.status(200).send(JSON.stringify(data.dataValues))
-//     }
-//     ).catch(err => {
-//         console.log(err)
-//         res.status(400).send(err)
-//     })
-// })
-
 contact.put('/:id', (req, res) => {
     console.log('req.params is', req.params)
     const id = parseInt(req.params.id)
     console.log('req.body is',req.body)
     Contact.findByPk(id)
     .then((contact) => {
-
-        console.log('this is the first name', contact)
-        // contact = req.body
-        // contact.save()
-        console.log('this is req.body again', req.body)
-        
         contact.update({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -75,12 +51,8 @@ contact.put('/:id', (req, res) => {
         }).then((changedContact) => {
             console.log('this is the changed contact', changedContact)
             changedContact.save()
-            // return res.send(changedContact)
+            
         })
-        // .then((updatedContact) => {
-        //     console.log('this is the updated contact', updatedContact)
-        //     res.send(updatedContact)
-        // })
         .catch((err) => {
             console.log('there was an error updating', err)
             res.status(400).send(err)
